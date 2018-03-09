@@ -51,6 +51,7 @@ namespace BloodBank.Data
                 donors.Weight = Convert.ToInt32(reader["Weight"].ToString());
                 donors.BloodGroup = reader["Blood_Group"].ToString();
                 donors.Status = reader["Status"].ToString();
+                donors.Date = reader["Date"].ToString();
                 donorsList.Add(donors);
             }
             return donorsList;
