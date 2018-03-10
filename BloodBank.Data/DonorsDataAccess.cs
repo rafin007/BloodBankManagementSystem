@@ -31,6 +31,11 @@ namespace BloodBank.Data
             return DataAccess.ExecuteQuery(query);
         }
 
+        public int ResetDate(int id, string date) {
+            string query = string.Format("UPDATE donors SET Date = '{0}' WHERE ID = '{1}'", date, id);
+            return DataAccess.ExecuteQuery(query);
+        }
+
         public List<Donors> GetAll()
         {
             string query = "SELECT * FROM donors";

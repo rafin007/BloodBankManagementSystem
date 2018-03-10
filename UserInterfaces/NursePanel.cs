@@ -107,6 +107,7 @@ namespace UserInterfaces
             //MessageBox.Show(donors.Date);
 
             DateTime now = DateTime.UtcNow.Date;
+            donors.Date = now.ToString("yyyy/MM/dd");
 
             TimeSpan difference = now - donorDate;
 
@@ -114,6 +115,7 @@ namespace UserInterfaces
             {
                 if (ds.resetDonorStatus(donors.Id) > 0)
                 {
+                    ds.ResetDate(donors.Id, donors.Date);
                     LoadData();
                 }
             }
